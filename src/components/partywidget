@@ -1,0 +1,45 @@
+import React from "react";
+
+const PartyWidget = ({ party }) => {
+  return (
+    <div className="p-4 w-full max-w-md bg-gray-800 rounded-lg shadow-md dark:bg-slate-950 text-white">
+      <h2 className="text-2xl font-bold mb-4">{party.Name}</h2>
+      <div className="mb-4">
+        <span className="font-semibold">Date: </span>
+        {party.Date}
+      </div>
+      <div className="mb-4">
+        <span className="font-semibold">Time: </span>
+        {party.Time}
+      </div>
+      {party.Phrase && (
+        <div className="mb-4">
+          <span className="font-semibold">Catchphrase: </span>
+          {party.Phrase}
+        </div>
+      )}
+      {party.Poster && (
+        <div className="mb-4">
+          <img
+            src={party.Poster}
+            alt="Party Poster"
+            className="w-full h-auto rounded-lg"
+          />
+        </div>
+      )}
+      <div className="mb-4">
+        <span className="font-semibold">Price: </span>${party.Price}
+      </div>
+      <div className="mb-4">
+        <span className="font-semibold">Ratio: </span>
+        {party.Ratio}
+      </div>
+      <div>
+        <span className="font-semibold">Host: </span>
+        {party.Host}
+      </div>
+    </div>
+  );
+};
+
+export default PartyWidget;
